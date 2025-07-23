@@ -1,12 +1,10 @@
 ---
-title: "My First Post"
+title: "Hello World!"
 date: 2025-07-23T00:00:00Z
 tags: ["intro", "blogging", "golang"]
 slug: "hello-pho"
 published: true
 ---
-
-# Hello World
 
 This is my first blog post using **pho**! 
 
