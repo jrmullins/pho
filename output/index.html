@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idm.life - pho 🍜</title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #1a1b26;
+            color: #c0caf5;
+        }
+        h1, h2, h3 { color: #7aa2f7; }
+        a { color: #73daca; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .nav {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #414868;
+        }
+        .nav-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #7aa2f7;
+            margin-bottom: 15px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #c0caf5;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .nav-links a:hover {
+            background-color: #24283b;
+            text-decoration: none;
+        }
+        .nav-links a.active {
+            background-color: #414868;
+        }
+        
+        .intro {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #414868;
+        }
+        .intro-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            margin-right: 20px;
+            background-color: #24283b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #565f89;
+            flex-shrink: 0;
+        }
+        .intro-text {
+            flex: 1;
+        }
+        .intro-text h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .intro-text p {
+            margin: 0;
+            color: #a9b1d6;
+        }
+        
+        .posts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #24283b;
+        }
+        .post-item:last-child {
+            border-bottom: none;
+        }
+        .post-date {
+            color: #565f89;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .post-title {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        .post-title a {
+            color: #c0caf5;
+        }
+        .post-title a:hover {
+            color: #7aa2f7;
+        }
+        .post-tags {
+            margin-top: 8px;
+        }
+        .tag {
+            background-color: #414868;
+            color: #c0caf5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .featured-post {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #414868;
+        }
+        .featured-post h2 {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .featured-content {
+            margin-bottom: 20px;
+        }
+        .more-posts {
+            margin-top: 40px;
+        }
+        .more-posts h3 {
+            margin-bottom: 25px;
+            color: #7aa2f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-title">idm.life</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            
+        </div>
+    </div>
+
+    <div class="intro">
+        <div class="intro-image">
+            📸
+        </div>
+        <div class="intro-text">
+            <h1>John Mullins</h1>
+            <p>Welcome to my blog where I share thoughts on code, hacking, and life.</p>
+        </div>
+    </div>
+
+    
+    <div class="featured-post">
+        <div class="post-date">July 23, 2025</div>
+        <h2>My First Post</h2>
+        <div class="featured-content">
+            <h1>Hello World</h1>
+<p>This is my first blog post using <strong>pho</strong>!</p>
+<h2>Features I'm excited about</h2>
+<ul>
+<li>Simple markdown-to-HTML conversion</li>
+<li>Future-proof file format</li>
+<li>Minimal configuration</li>
+<li>Easy publishing workflow</li>
+<li>Topic-based organization instead of date folders</li>
+<li>Auto-tagging from folder structure</li>
+</ul>
+<pre><code class="language-go">func main() {
+    fmt.Println(&quot;Hello, pho!&quot;)
+}
+</code></pre>
+<p>Looking forward to writing more posts with this simple tool. This post will automatically get the &quot;pesronal&quot; tag from being in the <code>posts/personal/</code> folder!</p>
+
+        </div>
+        <div class="post-tags">
+            
+            <span class="tag">intro</span>
+            
+            <span class="tag">blogging</span>
+            
+            <span class="tag">golang</span>
+            
+            <span class="tag">personal</span>
+            
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>
