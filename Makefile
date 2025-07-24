@@ -23,10 +23,13 @@ serve-github-pages:
 	git commit -m "Update blog: $$(date)" || echo "No changes to commit"
 	git push origin main
 	@echo "📤 Deploying to GitHub Pages..."
+	# Copy output files before switching branches
+	cp -r output /tmp/pho-deploy-$$$$
 	git checkout gh-pages || git checkout --orphan gh-pages
-	# Clean the branch and copy only HTML files
+	# Clean the branch and copy HTML files from temp location
 	git rm -rf . 2>/dev/null || true
-	cp -r output/* .
+	cp -r /tmp/pho-deploy-$$$$/* .
+	rm -rf /tmp/pho-deploy-$$$$
 	git add .
 	git commit -m "Deploy blog $$(date)" || echo "No changes to commit"
 	git push origin gh-pages
