@@ -32,7 +32,7 @@ serve-github-pages:
 	rm -rf /tmp/pho-deploy-temp
 	git add .
 	git commit -m "Deploy blog $$(date)" || echo "No changes to commit"
-	git push origin gh-pages
+	git push --force origin gh-pages
 	git checkout main
 	@echo "✅ Blog served at: https://jrmullins.github.io/pho"
 
