@@ -62,6 +62,15 @@ var cookCmd = &cobra.Command{
 			return
 		}
 		fmt.Println("Generated: index.html")
+
+		// Generate about page
+		fmt.Println("Generating about page...")
+		err = site.GenerateAbout()
+		if err != nil {
+			fmt.Printf("Error generating about page: %v\n", err)
+			return
+		}
+		fmt.Println("Generated: about.html")
 	},
 }
 

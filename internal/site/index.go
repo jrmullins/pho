@@ -89,6 +89,31 @@ func GenerateIndex(postList []posts.Post) error {
 	return tmpl.Execute(file, data)
 }
 
+func GenerateAbout() error {
+	// Create template data
+	data := IndexData{
+		SiteTitle:  "idm.life",
+		AuthorName: "John Mullins", // TODO: Make configurable
+		AuthorBio:  "Welcome to my blog where I share thoughts on code, hacking, and life.",
+	}
+
+	// Parse template
+	tmpl, err := template.ParseFiles("templates/about.html")
+	if err != nil {
+		return err
+	}
+
+	// Generate about.html
+	outputPath := filepath.Join("output", "about.html")
+	file, err := os.Create(outputPath)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	return tmpl.Execute(file, data)
+}
+
 func generateSlug(title string) string {
 	// Simple slug generation - same logic as in posts package
 	return strings.ReplaceAll(strings.ToLower(title), " ", "-")
