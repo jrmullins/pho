@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{.Title}} - pho 🍜</title>
+    <title>Motivation - pho 🍜</title>
     <style>
         body {
             font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
@@ -77,23 +77,38 @@
 </head>
 <body>
     <div class="nav">
-        <div class="nav-title">{{.SiteTitle}}</div>
+        <div class="nav-title">idm.life</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <!-- TODO: Add About, Projects, Categories pages -->
+            
         </div>
     </div>
 
     <div class="meta">
-        <strong>{{.Date.Format "2006-01-02"}}</strong>
+        <strong>2025-07-23</strong>
     </div>
     
-    {{.Content}}
+    <h2>What is pho?</h2>
+<p><code>pho</code> is a tiny blog generator. Its input is a folder of md files and its output is a static website</p>
+<h2>Why did I make this?</h2>
+<p>The basic motiviation was the following:</p>
+<ul>
+<li>Make blogging easier</li>
+<li>I am very good at making markdown every day, I am not good at remembering various frameworks like hugo every time I want to publish an idea</li>
+<li>Make a .MD file, generate and publish (or cook and serve) through CLI</li>
+<li>Have an empty metadata section at the top of each file to help interpret what to do later (future proofing)</li>
+<li>jekyl/octa/hugo without all the bs (I actually have endless respect for these projects, I just always forget what I was doing when I don't blog for a while)</li>
+</ul>
+
     
     <div class="tags">
-        {{range .AllTags}}
-        <span class="tag">{{.}}</span>
-        {{end}}
+        
+        <span class="tag">intro</span>
+        
+        <span class="tag">blogging</span>
+        
+        <span class="tag">personal</span>
+        
     </div>
 </body>
 </html>
