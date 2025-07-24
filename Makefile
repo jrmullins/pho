@@ -18,14 +18,20 @@ serve: cook
 
 # GitHub Pages deployment strategy
 serve-github-pages:
+	@echo "📦 Committing changes to main branch..."
+	git add .
+	git commit -m "Update blog: $$(date)" || echo "No changes to commit"
+	git push origin main
 	@echo "📤 Deploying to GitHub Pages..."
-	git checkout --orphan gh-pages 2>/dev/null || git checkout gh-pages
+	git checkout gh-pages || git checkout --orphan gh-pages
+	# Clean the branch and copy only HTML files
+	git rm -rf . 2>/dev/null || true
 	cp -r output/* .
 	git add .
-	git commit -m "Deploy blog $$(date)"
+	git commit -m "Deploy blog $$(date)" || echo "No changes to commit"
 	git push origin gh-pages
 	git checkout main
-	@echo "✅ Blog served at: https://yourusername.github.io/pho"
+	@echo "✅ Blog served at: https://jrmullins.github.io/pho"
 
 # Future deployment strategies can be added here
 serve-netlify:
