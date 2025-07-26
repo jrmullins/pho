@@ -79,7 +79,7 @@ func GenerateIndex(postList []posts.Post) error {
 	}
 
 	// Generate index.html
-	outputPath := filepath.Join("output", "index.html")
+	outputPath := filepath.Join("docs", "index.html")
 	file, err := os.Create(outputPath)
 	if err != nil {
 		return err
@@ -104,7 +104,7 @@ func GenerateAbout() error {
 	}
 
 	// Generate about.html
-	outputPath := filepath.Join("output", "about.html")
+	outputPath := filepath.Join("docs", "about.html")
 	file, err := os.Create(outputPath)
 	if err != nil {
 		return err

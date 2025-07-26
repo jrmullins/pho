@@ -26,7 +26,7 @@ serve-github-pages:
 	git checkout pages || git checkout -b pages
 	git merge main --no-edit
 	make cook
-	git add output/
+	git add docs/
 	git commit -m "Deploy blog: $$(date)" || echo "No changes to deploy"
 	git push origin pages
 	git checkout main
@@ -41,12 +41,12 @@ serve-netlify:
 # Clean generated files
 clean:
 	@echo "🧹 Cleaning up..."
-	rm -rf output/
+	rm -rf docs/
 
 # Development server (future implementation)
 dev: cook
 	@echo "🥢 Starting development server..."
-	cd output && python3 -m http.server 8080
+	cd docs && python3 -m http.server 8080
 
 # Show available commands
 help:

@@ -35,7 +35,7 @@ var cookCmd = &cobra.Command{
 
 		fmt.Printf("Found %d posts\n", len(postList))
 
-		err = os.MkdirAll("output", 0755)
+		err = os.MkdirAll("docs", 0755)
 		if err != nil {
 			fmt.Printf("Error creating output directory: %v\n", err)
 			return

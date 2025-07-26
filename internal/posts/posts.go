@@ -173,7 +173,7 @@ func GenerateHTML(post Post) error {
 	}
 	fileName += ".html"
 
-	outputPath := filepath.Join("output", fileName)
+	outputPath := filepath.Join("docs", fileName)
 	file, err := os.Create(outputPath)
 	if err != nil {
 		return fmt.Errorf("failed to create output file: %v", err)
