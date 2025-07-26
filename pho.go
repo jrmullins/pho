@@ -1,13 +1,14 @@
 package main
 
 import (
-	"github.com/jrmullins/pho/internal/posts"
-	"github.com/jrmullins/pho/internal/site"
 	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"time"
+
+	"github.com/jrmullins/pho/internal/posts"
+	"github.com/jrmullins/pho/internal/site"
 
 	"github.com/spf13/cobra"
 )
@@ -92,7 +93,7 @@ var postCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(3),
 	Run: func(cmd *cobra.Command, args []string) {
 		category := args[0]
-		subcategory := args[1] 
+		subcategory := args[1]
 		filename := args[2]
 
 		// Create the full directory path
@@ -133,7 +134,7 @@ Write your post content here...
 		err = os.WriteFile(filePath, []byte(metadata), 0644)
 		if err != nil {
 			fmt.Printf("Error creating post file: %v\n", err)
-			return 
+			return
 		}
 
 		fmt.Printf("Created new post: %s\n", filePath)
@@ -161,4 +162,5 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+
 }
