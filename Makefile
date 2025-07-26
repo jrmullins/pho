@@ -23,17 +23,12 @@ serve-github-pages:
 	git commit -m "Update blog: $$(date)" || echo "No changes to commit"
 	git push origin main
 	@echo "📤 Deploying to GitHub Pages..."
-	# Copy output files before switching branches
-	cp -r output /tmp/pho-deploy-temp
-	git checkout gh-pages || git checkout --orphan gh-pages
-	# Preserve CNAME file if it exists, then clean the branch
-	if [ -f CNAME ]; then cp CNAME /tmp/pho-deploy-temp/; fi
-	git rm -rf . 2>/dev/null || true
-	cp -r /tmp/pho-deploy-temp/* .
-	rm -rf /tmp/pho-deploy-temp
-	git add .
-	git commit -m "Deploy blog $$(date)" || echo "No changes to commit"
-	git push --force origin gh-pages
+	git checkout pages || git checkout -b pages
+	git merge main --no-edit
+	make cook
+	git add output/
+	git commit -m "Deploy blog: $$(date)" || echo "No changes to deploy"
+	git push origin pages
 	git checkout main
 	@echo "✅ Blog served at: https://jrmullins.github.io/pho"
 
