@@ -165,7 +165,7 @@
         <div class="featured-content">
             <p>I'm slowly learning how to neovim. I'm going to try to put some gotchas in here.</p>
 <h2>Identation weirdness</h2>
-<p>I love the <code>o</code> and <code>O</code> commands for inserting lines in edit mode before or after the line your on, especially for adding code. However it was slowly driving me mad that it would always end up on the begging of the line, and when writing code I'd always have to tab over. Turns out I needed this in my init.lua after the plugin section:</p>
+<p>I love the <code>o</code> and <code>O</code> commands for inserting lines in edit mode before or after the line your on, especially for adding code. However it was slowly driving me mad that it would always end up on the beginning of the line, and when writing code I'd always have to tab over. Turns out I needed this in my init.lua after the plugin section:</p>
 <pre><code>-- Indentation settings
 vim.cmd(&quot;filetype plugin indent on&quot;)
 vim.o.autoindent = true
