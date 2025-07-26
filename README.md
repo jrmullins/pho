@@ -1,5 +1,7 @@
 # pho 🍜 - Simple Blog Generator
 
+Checkout the live version at [https://idm.life](https://idm.life)
+
 ## Goals
 - Make blogging easier
 - I am very good at making markdown every day, I am not good at remembering various frameworks like hugo every time I want to publish an idea
