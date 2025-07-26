@@ -19,4 +19,4 @@ vim.o.smarttab = true
 ```
 
 ## Simple file manulation
-`:explore`
+`:Explore`
