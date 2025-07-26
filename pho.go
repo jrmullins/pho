@@ -5,6 +5,9 @@ import (
 	"github.com/jrmullins/pho/internal/site"
 	"fmt"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"time"
 
 	"github.com/spf13/cobra"
 )
@@ -83,9 +86,74 @@ var serveCmd = &cobra.Command{
 	},
 }
 
+var postCmd = &cobra.Command{
+	Use:   "post [category] [subcategory] [filename]",
+	Short: "Create a new blog post with automatic metadata",
+	Args:  cobra.ExactArgs(3),
+	Run: func(cmd *cobra.Command, args []string) {
+		category := args[0]
+		subcategory := args[1] 
+		filename := args[2]
+
+		// Create the full directory path
+		postDir := filepath.Join("posts", category, subcategory)
+		err := os.MkdirAll(postDir, 0755)
+		if err != nil {
+			fmt.Printf("Error creating directory: %v\n", err)
+			return
+		}
+
+		// Create the full file path
+		if filepath.Ext(filename) != ".md" {
+			filename = filename + ".md"
+		}
+		filePath := filepath.Join(postDir, filename)
+
+		// Check if file already exists
+		if _, err := os.Stat(filePath); err == nil {
+			fmt.Printf("File already exists: %s\n", filePath)
+			return
+		}
+
+		// Create metadata template
+		metadata := fmt.Sprintf(`---
+title: ""
+date: %s
+tags: []
+slug: ""
+published: false
+---
+
+# Your Title Here
+
+Write your post content here...
+`, time.Now().Format(time.RFC3339))
+
+		// Write the file
+		err = os.WriteFile(filePath, []byte(metadata), 0644)
+		if err != nil {
+			fmt.Printf("Error creating post file: %v\n", err)
+			return 
+		}
+
+		fmt.Printf("Created new post: %s\n", filePath)
+
+		// Open in vim
+		vimCmd := exec.Command("vim", filePath)
+		vimCmd.Stdin = os.Stdin
+		vimCmd.Stdout = os.Stdout
+		vimCmd.Stderr = os.Stderr
+		err = vimCmd.Run()
+		if err != nil {
+			fmt.Printf("Warning: Could not open vim: %v\n", err)
+		}
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(cookCmd)
 	rootCmd.AddCommand(serveCmd)
+	rootCmd.AddCommand(postCmd)
 }
 
 func main() {
