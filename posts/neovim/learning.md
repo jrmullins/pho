@@ -29,3 +29,15 @@ vim.o.smarttab = true
 
 ## Simple file manulation
 `:Explore`
+
+## Clearing highlights
+Lets say I search for something like `tree` I can use
+```
+/tree
+```
+Then to switch between them I can do `n` for next.
+
+If I then want to clear the highlighting, I can do
+```
+:noh
+```
