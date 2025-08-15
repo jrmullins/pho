@@ -5,14 +5,16 @@ import (
 	"html/template"
 	"os"
 	"path/filepath"
-	"github.com/jrmullins/pho/internal/posts"
 	"sort"
 	"strings"
 	"time"
 
+	"github.com/jrmullins/pho/internal/posts"
+
 	"github.com/yuin/goldmark"
 )
 
+// The IndexPost is shown on the index of the page
 type IndexPost struct {
 	Title   string
 	Date    time.Time
@@ -119,3 +121,6 @@ func generateSlug(title string) string {
 	return strings.ReplaceAll(strings.ToLower(title), " ", "-")
 }
 
+// func thisIsSomeBullshit() {
+// 	fmt.Println("Bullshit")
+// }

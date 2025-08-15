@@ -13,12 +13,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const version = "v1.0.2"
+
 var rootCmd = &cobra.Command{
 	Use:   "pho",
 	Short: "A simple, future-proof blog generator 🍜",
 	Long:  "pho converts markdown files into a static blog site with minimal configuration.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("pho v1.0.0 - Simple blog generator 🍜")
+		fmt.Printf("pho %s - Simple blog generator 🍜\n", version)
 		fmt.Println("Use 'pho --help' for available commands")
 	},
 }

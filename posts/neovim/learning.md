@@ -8,6 +8,11 @@ published: true
 
 I'm slowly learning how to neovim. I'm going to try to put some gotchas in here.
 
+## Another way to comment code
+- Install https://github.com/numToStr/Comment.nvim
+- Type `gcc` on the line
+- If you want to comment 5 lines type: `5gcc`
+
 ## Commenting multiple lines of code
 1. select the first caracter of your block
 2. press Ctrl+V ( this is rectangular visual selection mode)

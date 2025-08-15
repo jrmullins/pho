@@ -15,6 +15,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// This is Metadata about the post
 type Metadata struct {
 	Title     string    `yaml:"title"`
 	Date      time.Time `yaml:"date"`
@@ -141,10 +142,10 @@ func DeduplicateTags(tags []string) []string {
 
 type TemplateData struct {
 	SiteTitle string
-	Title      string
-	Date       time.Time
-	Content    template.HTML
-	AllTags    []string
+	Title     string
+	Date      time.Time
+	Content   template.HTML
+	AllTags   []string
 }
 
 func GenerateHTML(post Post) error {
@@ -161,10 +162,10 @@ func GenerateHTML(post Post) error {
 	allTags := DeduplicateTags(append(post.Metadata.Tags, post.FolderTags...))
 	data := TemplateData{
 		SiteTitle: "idm.life",
-		Title:      post.Metadata.Title,
-		Date:       post.Metadata.Date,
-		Content:    template.HTML(buf.String()),
-		AllTags:    allTags,
+		Title:     post.Metadata.Title,
+		Date:      post.Metadata.Date,
+		Content:   template.HTML(buf.String()),
+		AllTags:   allTags,
 	}
 
 	fileName := post.Metadata.Slug
@@ -182,3 +183,4 @@ func GenerateHTML(post Post) error {
 
 	return tmpl.Execute(file, data)
 }
+
