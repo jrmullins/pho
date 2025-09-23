@@ -160,49 +160,48 @@
 
     
     <div class="featured-post">
-        <div class="post-date">July 24, 2025</div>
-        <h2>Learning Neovim</h2>
+        <div class="post-date">September 23, 2025</div>
+        <h2>Thoughts on AI</h2>
         <div class="featured-content">
-            <p>I'm slowly learning how to neovim. I'm going to try to put some gotchas in here.</p>
-<h2>Another way to comment code</h2>
+            <p>Some people have asked me why I'm not super bullish on AI.</p>
+<h2>A rough timeline non specific</h2>
 <ul>
-<li>Install https://github.com/numToStr/Comment.nvim</li>
-<li>Type <code>gcc</code> on the line</li>
-<li>If you want to comment 5 lines type: <code>5gcc</code></li>
+<li>ChatGPT 3.5ish - I remember asking it to generate some code. It didn't work. It wouldn't compile. But I was surprised how far it got.</li>
+<li>Copilot - At some point I installed the Copilot plugin for JetBrains and spent a night building a web app. I remember fondly that it handled about 70% of the work for it me. Plenty of compile errors, but what a great start. I was especially happy it handled the annoying bits of CSS and Javascript for me.
+<ul>
+<li>At work eventually it got to a point where Copilot was so wrong so often that I stopped paying attention to it. I mostly rolled my eyes at the PR comments it generated.</li>
 </ul>
-<h2>Commenting multiple lines of code</h2>
-<ol>
-<li>select the first caracter of your block</li>
-<li>press Ctrl+V ( this is rectangular visual selection mode)</li>
-<li>type j for each line more you want to be commented</li>
-<li>type Shift-i (like I for &quot;insert at start&quot;)</li>
-<li>type // (or # or &quot; or ...)</li>
-<li>you will see the modification appearing only on the first line</li>
-<li>IMPORTANT LAST STEP: type Esc key twice, and there you see the added character appear on all lines</li>
-</ol>
-<h2>Identation weirdness</h2>
-<p>I love the <code>o</code> and <code>O</code> commands for inserting lines in edit mode before or after the line your on, especially for adding code. However it was slowly driving me mad that it would always end up on the beginning of the line, and when writing code I'd always have to tab over. Turns out I needed this in my init.lua after the plugin section:</p>
-<pre><code>-- Indentation settings
-vim.cmd(&quot;filetype plugin indent on&quot;)
-vim.o.autoindent = true
-vim.o.smartindent = true
-vim.o.smarttab = true
-</code></pre>
-<h2>Simple file manulation</h2>
-<p><code>:Explore</code></p>
-<h2>Clearing highlights</h2>
-<p>Lets say I search for something like <code>tree</code> I can use</p>
-<pre><code>/tree
-</code></pre>
-<p>Then to switch between them I can do <code>n</code> for next.</p>
-<p>If I then want to clear the highlighting, I can do</p>
-<pre><code>:noh
-</code></pre>
+</li>
+<li>ChatGPT 4ish - This is when I started paying for ChatGPT. This felt like a real watershed moment. The code it generated was about 90% correct, but it was mostly constrained to 1-3 functions at a time.</li>
+<li>Claude - Wow, where do I begin
+<ul>
+<li>My previous architect at work recommended it to me because he was leaving.</li>
+<li>At first I mostly used to help me generate summarizations of repos I didn't understand but managed to inherit. I let it do a few changes here and there.</li>
+<li>Around this time Junie came out for Jetbrains, which was mostly great but also limited and expensive. I moved on fast.</li>
+<li>At some point in time, I just didn't have anything left in me. Call it burn out. I tasked claude with figuring out something mildly complex and it suceeded admirably. I began to trust it.</li>
+<li>Over time, I tried trusting Claude with more and more. Eventually the ratio was like 90% of the time it could handle small things, but every 10% of the time it would just fuck up horribly. Often it would spend hours on a problem I was able to solve within just a few moments of thinking about the problem.</li>
+<li>Claude started getting worse - it would comment out tests and functions, refuse to work on things, and I'd hit my time limits often.</li>
+<li>Now I mostly keep Claude in plan mode. I might let it help tackle a quick 1 min bug fix.</li>
+</ul>
+</li>
+</ul>
+<p>So basically, today, when people ask me &quot;What I think about AI?&quot; my answer is something like.</p>
+<blockquote>
+<p>Meh</p>
+</blockquote>
 
         </div>
         <div class="post-tags">
             
-            <span class="tag">neovim</span>
+            <span class="tag">ai</span>
+            
+            <span class="tag">claude</span>
+            
+            <span class="tag">copilot</span>
+            
+            <span class="tag">codex</span>
+            
+            <span class="tag">vibe</span>
             
         </div>
     </div>
@@ -213,6 +212,20 @@ vim.o.smarttab = true
         <h3>More Posts</h3>
         <ul class="posts-list">
             
+            
+            
+            
+            <li class="post-item">
+                <div class="post-date">July 24, 2025</div>
+                <h4 class="post-title">
+                    <a href="learning-neovim.html">Learning Neovim</a>
+                </h4>
+                <div class="post-tags">
+                    
+                    <span class="tag">neovim</span>
+                    
+                </div>
+            </li>
             
             
             
