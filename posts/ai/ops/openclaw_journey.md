@@ -6,8 +6,6 @@ slug: "openclaw-journey"
 published: true
 ---
 
-# My AI Perspective Shift
-
 Back in January, two friends and I started experimenting with OpenClaw. We each took a different path. One ran it on a rack-mounted Mac Mini. Another set it up on Proxmox. I went with a Digital Ocean VPS.
 
 That first week taught me a lot about the ecosystem. I built custom tools for notifications and email. The real win was something I called NightShift, a program that would pick up projects defined in Linear and push pull requests to GitHub overnight.
