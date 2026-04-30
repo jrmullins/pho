@@ -160,48 +160,35 @@
 
     
     <div class="featured-post">
-        <div class="post-date">September 23, 2025</div>
-        <h2>Thoughts on AI</h2>
+        <div class="post-date">April 30, 2026</div>
+        <h2>My AI Perspective Shift</h2>
         <div class="featured-content">
-            <p>Some people have asked me why I'm not super bullish on AI.</p>
-<h2>A rough timeline non specific</h2>
-<ul>
-<li>ChatGPT 3.5ish - I remember asking it to generate some code. It didn't work. It wouldn't compile. But I was surprised how far it got.</li>
-<li>Copilot - At some point I installed the Copilot plugin for JetBrains and spent a night building a web app. I remember fondly that it handled about 70% of the work for it me. Plenty of compile errors, but what a great start. I was especially happy it handled the annoying bits of CSS and Javascript for me.
-<ul>
-<li>At work eventually it got to a point where Copilot was so wrong so often that I stopped paying attention to it. I mostly rolled my eyes at the PR comments it generated.</li>
-</ul>
-</li>
-<li>ChatGPT 4ish - This is when I started paying for ChatGPT. This felt like a real watershed moment. The code it generated was about 90% correct, but it was mostly constrained to 1-3 functions at a time.</li>
-<li>Claude - Wow, where do I begin
-<ul>
-<li>My previous architect at work recommended it to me because he was leaving.</li>
-<li>At first I mostly used to help me generate summarizations of repos I didn't understand but managed to inherit. I let it do a few changes here and there.</li>
-<li>Around this time Junie came out for Jetbrains, which was mostly great but also limited and expensive. I moved on fast.</li>
-<li>At some point in time, I just didn't have anything left in me. Call it burn out. I tasked claude with figuring out something mildly complex and it suceeded admirably. I began to trust it.</li>
-<li>Over time, I tried trusting Claude with more and more. Eventually the ratio was like 90% of the time it could handle small things, but every 10% of the time it would just fuck up horribly. Often it would spend hours on a problem I was able to solve within just a few moments of thinking about the problem.</li>
-<li>Claude started getting worse - it would comment out tests and functions, refuse to work on things, and I'd hit my time limits often.</li>
-<li>Now I mostly keep Claude in plan mode. I might let it help tackle a quick 1 min bug fix.</li>
-</ul>
-</li>
-</ul>
-<p>So basically, today, when people ask me &quot;What I think about AI?&quot; my answer is something like.</p>
-<blockquote>
-<p>Meh</p>
-</blockquote>
+            <h1>My AI Perspective Shift</h1>
+<p>Back in January, two friends and I started experimenting with OpenClaw. We each took a different path. One ran it on a rack-mounted Mac Mini. Another set it up on Proxmox. I went with a Digital Ocean VPS.</p>
+<p>That first week taught me a lot about the ecosystem. I built custom tools for notifications and email. The real win was something I called NightShift, a program that would pick up projects defined in Linear and push pull requests to GitHub overnight.</p>
+<p>Then I ran the OpenClaw update command and everything crashed.</p>
+<p>I spent the next week rebuilding. Docker Compose, a local LLM on Ollama, and several forks of OpenClaw later, I had a clear goal: bring that $130 weekly bill down.</p>
+<p>I landed on devstral-small-2:24b with Picoclaw. Running locally on my M1 MacBook meant roughly one minute per request. Fast enough to be useful, slow enough to notice.</p>
+<p>Eventually I settled on a shared CPU Vultr instance running Arch Linux, Picoclaw, and OpenRouter models. A small Go binary I felt comfortable modifying myself. The whole setup runs on hardware you wouldn't blink at.</p>
+<p>That's the real lesson here. You don't need a powerful machine to run an AI agent. You just need reliable access to an LLM. OpenRouter's dynamic routing handles model selection automatically, and my weekly costs sit around $5.</p>
+<p>A few months ago I was skeptical. Now I run my own stack, spend almost nothing, and ship code while I sleep.</p>
 
         </div>
         <div class="post-tags">
             
             <span class="tag">ai</span>
             
-            <span class="tag">claude</span>
+            <span class="tag">openclaw</span>
             
-            <span class="tag">copilot</span>
+            <span class="tag">self-hosted</span>
             
-            <span class="tag">codex</span>
+            <span class="tag">ollama</span>
             
-            <span class="tag">vibe</span>
+            <span class="tag">openrouter</span>
+            
+            <span class="tag">picoclaw</span>
+            
+            <span class="tag">ops</span>
             
         </div>
     </div>
@@ -212,6 +199,28 @@
         <h3>More Posts</h3>
         <ul class="posts-list">
             
+            
+            
+            
+            <li class="post-item">
+                <div class="post-date">September 23, 2025</div>
+                <h4 class="post-title">
+                    <a href="thoughts-on-ai.html">Thoughts on AI</a>
+                </h4>
+                <div class="post-tags">
+                    
+                    <span class="tag">ai</span>
+                    
+                    <span class="tag">claude</span>
+                    
+                    <span class="tag">copilot</span>
+                    
+                    <span class="tag">codex</span>
+                    
+                    <span class="tag">vibe</span>
+                    
+                </div>
+            </li>
             
             
             

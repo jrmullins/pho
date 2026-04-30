@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI Perspective Shift - pho 🍜</title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #1a1b26;
+            color: #c0caf5;
+        }
+        h1, h2, h3 { color: #7aa2f7; }
+        a { color: #73daca; }
+        code {
+            background-color: #24283b;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+        pre {
+            background-color: #24283b;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .meta {
+            color: #565f89;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .tags {
+            margin-top: 20px;
+        }
+        .tag {
+            background-color: #414868;
+            color: #c0caf5;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .nav {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #414868;
+        }
+        .nav-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #7aa2f7;
+            margin-bottom: 15px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #c0caf5;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .nav-links a:hover {
+            background-color: #24283b;
+            text-decoration: none;
+        }
+        .nav-links a.active {
+            background-color: #414868;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-title">idm.life</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            
+        </div>
+    </div>
+
+    <div class="meta">
+        <strong>2026-04-30</strong>
+    </div>
+    
+    <h1>My AI Perspective Shift</h1>
+<p>Back in January, two friends and I started experimenting with OpenClaw. We each took a different path. One ran it on a rack-mounted Mac Mini. Another set it up on Proxmox. I went with a Digital Ocean VPS.</p>
+<p>That first week taught me a lot about the ecosystem. I built custom tools for notifications and email. The real win was something I called NightShift, a program that would pick up projects defined in Linear and push pull requests to GitHub overnight.</p>
+<p>Then I ran the OpenClaw update command and everything crashed.</p>
+<p>I spent the next week rebuilding. Docker Compose, a local LLM on Ollama, and several forks of OpenClaw later, I had a clear goal: bring that $130 weekly bill down.</p>
+<p>I landed on devstral-small-2:24b with Picoclaw. Running locally on my M1 MacBook meant roughly one minute per request. Fast enough to be useful, slow enough to notice.</p>
+<p>Eventually I settled on a shared CPU Vultr instance running Arch Linux, Picoclaw, and OpenRouter models. A small Go binary I felt comfortable modifying myself. The whole setup runs on hardware you wouldn't blink at.</p>
+<p>That's the real lesson here. You don't need a powerful machine to run an AI agent. You just need reliable access to an LLM. OpenRouter's dynamic routing handles model selection automatically, and my weekly costs sit around $5.</p>
+<p>A few months ago I was skeptical. Now I run my own stack, spend almost nothing, and ship code while I sleep.</p>
+
+    
+    <div class="tags">
+        
+        <span class="tag">ai</span>
+        
+        <span class="tag">openclaw</span>
+        
+        <span class="tag">self-hosted</span>
+        
+        <span class="tag">ollama</span>
+        
+        <span class="tag">openrouter</span>
+        
+        <span class="tag">picoclaw</span>
+        
+        <span class="tag">ops</span>
+        
+    </div>
+</body>
+</html>
