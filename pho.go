@@ -44,6 +44,13 @@ var cookCmd = &cobra.Command{
 			return
 		}
 
+		// Copy assets
+		fmt.Println("Copying assets...")
+		err = copyAssets("assets", "docs/assets")
+		if err != nil {
+			fmt.Printf("Warning: Failed to copy assets: %v\n", err)
+		}
+
 		// Generate individual posts
 		for _, post := range postList {
 			if !post.Metadata.Published {
@@ -151,6 +158,52 @@ Write your post content here...
 			fmt.Printf("Warning: Could not open vim: %v\n", err)
 		}
 	},
+}
+
+func copyAssets(srcDir, dstDir string) error {
+	info, err := os.Stat(srcDir)
+	if os.IsNotExist(err) {
+		return nil
+	}
+	if err != nil {
+		return err
+	}
+	if !info.IsDir() {
+		return fmt.Errorf("assets source is not a directory: %s", srcDir)
+	}
+
+	err = os.MkdirAll(dstDir, 0755)
+	if err != nil {
+		return fmt.Errorf("failed to create assets destination: %v", err)
+	}
+
+	entries, err := os.ReadDir(srcDir)
+	if err != nil {
+		return err
+	}
+
+	for _, entry := range entries {
+		srcPath := filepath.Join(srcDir, entry.Name())
+		dstPath := filepath.Join(dstDir, entry.Name())
+
+		if entry.IsDir() {
+			err := copyAssets(srcPath, dstPath)
+			if err != nil {
+				return err
+			}
+		} else {
+			srcData, err := os.ReadFile(srcPath)
+			if err != nil {
+				return err
+			}
+			err = os.WriteFile(dstPath, srcData, 0644)
+			if err != nil {
+				return err
+			}
+			fmt.Printf("  Copied: %s\n", entry.Name())
+		}
+	}
+	return nil
 }
 
 func init() {
